@@ -74,7 +74,7 @@ void Browser::visit(const std::string &url)
 {
     // Remove the oldest entry if limit exceeded
     if (history->size() >= history_limit)
-        history->pop_front(); 
+        history->pop_front();
     history->push_back(url);
     history->end(); // Not necessary, but just to be sure
 }
