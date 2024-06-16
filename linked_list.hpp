@@ -40,6 +40,9 @@ LinkedList<T>::~LinkedList()
 	clear();
 	delete head;
 	delete tail;
+
+	head = nullptr; // set to null to avoid dangling pointers
+	tail = nullptr; // same as above
 }
 
 /**
@@ -166,9 +169,7 @@ template <typename T>
 void LinkedList<T>::clear()
 {
 	while (head->get_next() != tail)
-	{
 		pop_front();
-	}
 }
 
 /**
@@ -256,9 +257,7 @@ template <typename T>
 void LinkedList<T>::forward()
 {
 	if (current != tail)
-	{
 		current = current->get_next();
-	}
 }
 
 /**
@@ -272,9 +271,7 @@ template <typename T>
 void LinkedList<T>::backward()
 {
 	if (current != head)
-	{
 		current = current->get_prev();
-	}
 }
 
 /**

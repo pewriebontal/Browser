@@ -90,6 +90,8 @@ void Browser::visit(const std::string &url)
  */
 void Browser::back(int steps)
 {
+    if (history->empty())
+        throw std::out_of_range("History is empty.");
     // go back steps times
     // if previous site is the first site in history, stop
 
@@ -112,6 +114,8 @@ void Browser::back(int steps)
  */
 void Browser::forward(int steps)
 {
+    if (history->empty())
+        throw std::out_of_range("History is empty.");
     // go forward steps times
     // if next site is the last site in history, stop
 
@@ -135,7 +139,10 @@ void Browser::forward(int steps)
  */
 int Browser::remove(std::string url)
 {
-    int count = 0;
+    int count;
+    count = 0;
+    if (history->empty())
+        throw std::out_of_range("History is empty.");
     history->begin();
     while (history->search(url))
     {
@@ -249,7 +256,7 @@ void Browser::visit_bookmark(int index)
     //    index--; // Convert to 0-based index
     if (index < 0 || index >= bookmarks->size())
     {
-        std::cout << "Invalid index. Current site has not been updated." << std::endl;
+        throw std::out_of_range("Invalid index. Current site has not been updated.");
         return;
     }
     bookmarks->begin();

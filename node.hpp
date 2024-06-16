@@ -15,8 +15,8 @@
 template <typename T>
 Node<T>::Node()
 {
-    next = nullptr; // set to null to avoid dangling pointers
-    prev = nullptr; // same as above
+    next = nullptr;
+    prev = nullptr; 
 }
 
 /**
