@@ -1,7 +1,7 @@
 /*
  * Node.hpp
- * Written by : SENG1120 Staff (c1234567)
- * Modified   : 03/08/2023
+ * Written by : Min Thu Khaing (c3489993)
+ * Modified   : 16/06/2024
  *
  * This class represents the template implementation for a Node class.
  * This file should be used in conjunction with Assignment 1 for SENG1120.
